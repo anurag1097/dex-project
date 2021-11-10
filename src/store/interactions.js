@@ -20,6 +20,7 @@ export const loadWeb3 = async (dispatch) => {
 }
 
 export const loadAccount = async (web3, dispatch) => {
+  await window.ethereum.enable();
   const accounts = await web3.eth.getAccounts()
   const account = await accounts[0]
   if(typeof account !== 'undefined'){
